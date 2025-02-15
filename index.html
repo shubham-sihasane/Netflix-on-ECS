@@ -1,524 +1,373 @@
-<!DOCTYPE html>
-<html lang="hi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Master Linux with AI in 45 Days and Generate 3 Sources of Income. Learn Linux Administration, AI Automation, Freelancing, and Content Creation. Enroll Now for ₹1,800 (90% Off)!">
-    <meta name="keywords" content="Linux Course, AI Automation, Freelancing, Content Creation, Linux Administration, Ansible, AWS Cloud, High-Paying Jobs">
-    <meta name="author" content="Tech Mahato">
-    <meta property="og:title" content="Master Linux with AI in 45 Days | 3 Income Sources">
-    <meta property="og:description" content="Learn Linux Administration, AI Automation, and Freelancing to generate 3 sources of income. Enroll Now for ₹1,800 (90% Off)!">
-    <meta property="og:image" content="https://source.unsplash.com/800x300/?technology,linux">
-    <meta property="og:url" content="https://www.techmahato.com/linux-ai-course">
-    <title>Master Linux with AI in 45 Days | Generate 3 Income Sources | Tech Mahato</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #2ecc71;
-            --secondary: #3498db;
-            --background: #f8f9fa;
-            --text: #333;
-        }
-        [data-theme="dark"] {
-            --background: #1a1a1a;
-            --text: #f8f9fa;
-        }
-        body {
-            font-family: 'Segoe UI', system-ui;
-            background: var(--background);
-            color: var(--text);
-            transition: background 0.5s, color 0.5s;
-        }
-        .hero-section {
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-            background-attachment: fixed; /* Parallax Effect */
-        }
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 100px;
-            height: 100px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-        .video-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-        .video-container:hover {
-            transform: scale(1.02);
-        }
-        .income-card {
-            background: var(--background);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-        }
-        .income-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        .testimonial-card {
-            background: var(--background);
-            border-left: 4px solid var(--secondary);
-            position: relative;
-            padding: 20px;
-            margin: 10px;
-        }
-        .badge-hot {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            background: #e74c3c;
-            padding: 8px 15px;
-            border-radius: 25px;
-            transform: rotate(10deg);
-        }
-        .enroll-form {
-            background: var(--background);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 30px;
-        }
-        .sticky-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .highlight {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        .animated-text {
-            animation: fadeIn 2s infinite;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            position: absolute;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            transition: transform 0.1s ease-out;
-        }
-        /* Dark Mode Toggle */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        /* Countdown Timer with Progress Bar */
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            width: 100px;
-            height: 100px;
-        }
-        .countdown-progress {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: conic-gradient(var(--primary) 0%, transparent 0%);
-            transition: background 1s linear;
-        }
-        .countdown-text {
-            position: absolute;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-
-<!-- Custom Cursor -->
-<div class="cursor"></div>
-
-<!-- Dark Mode Toggle -->
-<div class="dark-mode-toggle">
-    <button class="btn btn-secondary" id="dark-mode-toggle">🌙</button>
-</div>
-
-<!-- Sticky CTA Button -->
-<div class="sticky-cta">
-    <a href="https://topmate.io/techmahato/1420753" class="btn btn-danger btn-lg px-4 py-3 shadow-lg">
-        LIVE Class || Enroll Now @ ₹1,800 <small><del>₹18,000</del></small>
-    </a>
-</div>
-
-<!-- Hero Section -->
-<section class="hero-section">
-    <div class="container text-center">
-        <h1 class="animate__animated animate__fadeInDown mb-4 display-4 fw-bold" data-aos="fade-down">
-            Master <span class="text-warning">Linux with AI</span> in 45 Days <br> and Generate <span class="text-warning">3 Sources of Income</span>
-        </h1>
-        
-        <!-- Video Embed -->
-        <div class="row justify-content-center mt-5">
-            <div class="col-lg-8 col-md-10">
-                <div class="video-container" data-aos="zoom-in">
-                    <iframe width="100%" height="400" src="https://www.youtube.com/embed/LAxauWCkdSM" 
-                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen></iframe>
-                </div>
-            </div>
+<html>
+  <head>
+    <meta name="description" content="Hello this is my first web page!." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+    <link
+      rel="icon"
+      href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__brand">
+          <img
+            src="https://www.freepnglogos.com/uploads/netflix-logo-0.png"
+            alt="logo"
+            class="brand__logo"
+          />
         </div>
-    </div>
-</section>
 
-
-<!-- Income Streams -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Generate Income Through 3 Streams</h2>
-        <div class="row">
-            <!-- Tech Job Column -->
-            <div class="col-md-4" data-aos="fade-right">
-                <div class="income-card">
-                    <div class="badge-hot text-white">HOT</div>
-                    <h3 class="text-primary">🚀 Land Your Tech Job</h3>
-                    <ul class="mt-3">
-                        <li>
-                            <strong>💰 Earn ₹5-15 LPA as Linux Architect:</strong><br>
-                            <em>"Linux is the backbone of modern IT infrastructure"</em>
-                        </li>
-                        <li>
-                            <strong>🤖 Ansible AI Automation:</strong><br>
-                            <em>"Supercharge workflows with cutting-edge automation"</em>
-                        </li>
-                        <li>
-                            <strong>📄 AI Resume Builder:</strong><br>
-                            <em>"Build resumes that rank #1 in searches"</em>
-                        </li>
-                        <li>
-                            <strong>📚 Interview Preparation:</strong><br>
-                            <em>"250+ interview questions and answers"</em>
-                        </li>
-                        <li>
-                            <strong>🛠️ 25+ Production-Ready Projects:</strong><br>
-                            <em>"Build a strong portfolio through hands-on experience"</em>
-                        </li>
-                    </ul>
-                </div>
+        <div class="navbar__nav__items">
+          <div class="nav__item">
+            <div class="dropdown__container">
+              <i class="fas fa-globe"></i>
+              <select
+                name="languages"
+                id="languagesSelect"
+                class="language__drop__down"
+              >
+                <option value="english" selected style="color: white;">English</option>
+                <option value="hindi" style="color: white;">हिन्दी</option>
+              </select>
             </div>
+          </div>
 
-            <!-- Freelance Column -->
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="income-card">
-                    <div class="badge-hot text-white">HOT & NEW</div>
-                    <h3 class="text-primary">💼 Freelance Blueprint</h3>
-                    <ul class="mt-3">
-                        <li>
-                            <strong>🚀 Launch Your Freelance Empire in 45 Days</strong><br>
-                            <em>"Zero to ₹50k/month - Perfect for first-timers"</em>
-                        </li>
-                        <li>
-                            <strong>🤖 AI-Powered Portfolio Builder</strong><br>
-                            <em>"Showcase projects tailored to client needs using AI"</em>
-                        </li>
-                        <li>
-                            <strong>🔗 LinkedIn Personal Branding</strong><br>
-                            <em>"Transform your profile into a premium service billboard"</em>
-                        </li>
-                        <li>
-                            <strong>🎯 AI Project Finder System</strong><br>
-                            <em>"Discover high-paying gigs before competitors do"</em>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Content Creator Column -->
-            <div class="col-md-4" data-aos="fade-left">
-                <div class="income-card">
-                    <div class="badge-hot text-white">Trending</div>
-                    <h3 class="text-primary">📢 Content Creator</h3>
-                    <ul class="mt-3">
-                        <li>
-                            <strong>🌟 Dominate Your Niche with AI-Boosted Content</strong><br>
-                            <em>"Become the go-to Linux guru in your market"</em>
-                        </li>
-                        <li>
-                            <strong>✍️ Convert Knowledge into Blogs</strong><br>
-                            <em>"Turn your expertise into ₹1L/month passive income"</em>
-                        </li>
-                        <li>
-                            <strong>👻 Become a Ghostwriter</strong><br>
-                            <em>"Work anonymously for major IT companies"</em>
-                        </li>
-                        <li>
-                            <strong>🖥️ Linux Consultant</strong><br>
-                            <em>"Help organizations set up Linux-based applications"</em>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          <div class="nav__item">
+            <button class="signin__button">Sign in</button>
+          </div>
         </div>
-    </div>
-</section>
+      </nav>
+    </header>
 
-<!-- Course Curriculum -->
-<section class="py-5 bg-light">
-    <div class="container">
-        <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">What You Will Learn?</h2>
-        <div class="row g-4">
-            <div class="col-md-6" data-aos="fade-right">
-                <div class="income-card h-100">
-                    <h4 class="text-primary mb-4">🚀 Master Core Linux + AI</h4>
-                    <ul class="features-list">
-                        <li class="mb-3">
-                            <strong>🐧 Basic Linux for Beginners</strong>
-                            <p class="m-0">From terminal basics to file system mastery</p>
-                        </li>
-                        <li class="mb-3">
-                            <strong>💻 Advanced Linux for Experienced</strong>
-                            <p class="m-0">Kernel tuning, security hardening & performance optimization</p>
-                        </li>
-                        <li class="mb-3">
-                            <strong>🤖 Bash Scripting Mastery Using ChatGPT</strong>
-                            <p class="m-0">AI-powered scripting for maximum efficiency</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="col-md-6" data-aos="fade-left">
-                <div class="income-card h-100">
-                    <h4 class="text-primary mb-4">🤖 AI Automation</h4>
-                    <ul class="features-list">
-                        <li class="mb-3">
-                            <strong>⚡ Automate Day-to-Day Tasks with AI</strong>
-                            <p class="m-0">Smart automation for routine Linux operations</p>
-                        </li>
-                        <li class="mb-3">
-                            <strong>🔧 Ansible AI Configuration</strong>
-                            <p class="m-0">AI-enhanced infrastructure-as-code automation</p>
-                        </li>
-                        <li class="mb-3">
-                            <strong>🚨 Server Monitoring & Alerting</strong>
-                            <p class="m-0">AI-powered observability stack implementation</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+    <main>
+      <section class="hero">
+        <div class="hero__bg__image__container">
+          <img
+            src="https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/710d74e0-7158-408e-8d9b-23c219dee5df/IN-en-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+            alt="BG hero image"
+            class="hero__bg__image"
+          />
         </div>
-    </div>
-</section>
+        <div class="hero__bg__overlay"></div>
 
-<!-- Testimonials -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">What Our Students Say</h2>
-        <div class="row">
-            <div class="col-md-4" data-aos="fade-right">
-                <div class="testimonial-card">
-                    <p>"This course changed my career! I landed a job within 3 months."</p>
-                    <h5 class="text-primary">- Rahul, Linux Admin</h5>
-                </div>
+        <div class="hero__card">
+          <h1 class="hero__title">
+            Unlimited Movies TV,<br />
+            Shows and More.
+          </h1>
+          <p class="hero__subtitle">Watch anywhere and cancel anytime.</p>
+          <p class="hero__description">
+            Ready to watch? Enter your email to create or restart your
+            membership .
+          </p>
+
+          <div class="email__form__container">
+            <div class="form__container">
+              <input type="email" class="email__input" placeholder=" " />
+              <label class="email__label">Email Address</label>
             </div>
-            <div class="col-md-4" data-aos="fade-up">
-                <div class="testimonial-card">
-                    <p>"The best Linux course with practical, real-world examples!"</p>
-                    <h5 class="text-primary">- Priya, Cloud Engineer</h5>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="fade-left">
-                <div class="testimonial-card">
-                    <p>"AI integration in Linux? Amazing! Helped me automate daily tasks."</p>
-                    <h5 class="text-primary">- Aman, DevOps Engineer</h5>
-                </div>
-            </div>
+            <button class="primary__button">
+              Get Started <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-    </div>
-</section>
-
-<!-- Enrollment Section -->
-<section class="py-5 bg-dark text-white">
-    <div class="container">
-        <div class="enroll-form" data-aos="zoom-in">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h2 class="fw-bold text-warning">Enroll Now! Only 18 Seats for Live Class</h2>
-                    <div class="d-flex align-items-center mt-3">
-                        <h3 class="text-danger me-3">Just ₹1,800</h3>  <!-- Kept red -->
-                        <del class="text-warning">₹18,000</del>  <!-- Changed to yellow -->
-                    </div>
-                    <p class="text-danger me-3">Offer Ends in: <span id="countdown" class="fw-bold text-danger">48:00:00</span></p>  <!-- Changed to red -->
-                </div>
-                <div class="col-md-4 text-center">
-                    <a href="https://topmate.io/techmahato/1420753" target="_blank" class="btn btn-primary btn-lg px-5">
-                        Enroll Now
-                    </a>
-                </div>
+      </section>
+      <section class="features__container">
+        <!-- Feature 1 -->
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">Enjoy on your TV.</h3>
+            <h5 class="feature__sub__title">
+              Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+              Blu-ray players and more.
+            </h5>
+          </div>
+          <div class="feature__image__container">
+            <img
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"
+              alt="Feature image"
+              class="feature__image"
+            />
+            <div class="feature__backgroud__video__container">
+              <video
+                autoplay=""
+                loop=""
+                muted=""
+                class="feature__backgroud__video"
+              >
+                <source
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                  type="video/mp4"
+                />
+              </video>
             </div>
+          </div>
         </div>
-    </div>
-</section>
-
-<!-- FAQ Section -->
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 fw-bold" data-aos="fade-up">Frequently Asked Questions (सामान्य प्रश्न)</h2>
-        <div class="accordion" id="faqAccordion">
-            <!-- Original English FAQs -->
-            <div class="accordion-item" data-aos="fade-right">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                        Do I need prior Linux experience?
-                    </button>
-                </h3>
-                <div id="faq1" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                        No! The course starts from basics and takes you to advanced levels.
-                    </div>
-                </div>
+        <!-- Feature 2 -->
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">
+              Download your shows to watch offline.
+            </h3>
+            <h5 class="feature__sub__title">
+              Save your favourites easily and always have something to watch.
+            </h5>
+          </div>
+          <div class="feature__image__container">
+            <img
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+              alt="Feature image"
+              class="feature__image"
+            />
+            <div class="feature__2__poster__container">
+              <div class="poster__container">
+                <img
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/boxshot.png"
+                  alt="poster"
+                  class="poster"
+                />
+              </div>
+              <div class="poster__details">
+                <h4>Stranger Things</h4>
+                <h6>Downloading...</h6>
+              </div>
+              <div class="download__gif__container">
+                <img
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif"
+                  alt="downloading gif"
+                  class="gif"
+                />
+              </div>
             </div>
-
-            <!-- New Hindi/Hinglish FAQs -->
-            <div class="accordion-item" data-aos="fade-left">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                        क्या मुझे पहले Linux का Experience चाहिए?
-                    </button>
-                </h3>
-                <div id="faq3" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        नहीं! कोर्स Basic से शुरू करके Advanced Level तक ले जाता है।
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item" data-aos="fade-right">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                        मैंने अभी College Complete किया है, क्या यह कोर्स मेरे लिए है?
-                    </button>
-                </h3>
-                <div id="faq4" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        बिल्कुल! यह कोर्स IT Career शुरू करने के लिए Best Choice है।
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item" data-aos="fade-left">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
-                        क्या यह कोर्स Desktop/Network Support Professionals के लिए उपयोगी है?
-                    </button>
-                </h3>
-                <div id="faq5" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        हाँ, यह कोर्स आपक Career को Boost करेगा और High Salary Jobs के Opportunities बढ़ाएगा।
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item" data-aos="fade-right">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                        मुझे पहले से Linux आता है, फिर भी यह कोर्स करूँ?
-                    </button>
-                </h3>
-                <div id="faq6" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        हाँ! इसमें 25+ Real-World Projects हैं जो किसी Institute में नहीं सिखाए जाते। यह Projects Production Environment के Experience पर Based हैं।
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item" data-aos="fade-left">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
-                        क्या इस कोर्स के बाद Freelancing Opportunities मिलेंगी?
-                    </button>
-                </h3>
-                <div id="faq7" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        निश्चित रूप से! Linux पूरी IT Industry का Core है और Global Companies Remote Work Opportunities भी दे रही हैं।
-                    </div>
-                </div>
-            </div>
-
-            <div class="accordion-item" data-aos="fade-right">
-                <h3 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
-                        यह कोर्स दूसरों से कैसे अलग है?
-                    </button>
-                </h3>
-                <div id="faq8" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                        AI-Powered Learning + Hands-on Projects + Job Focused Content = Complete Career Solution
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
-</section>
+        <!-- Feature 3 -->
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">Watch everywhere.</h3>
+            <h5 class="feature__sub__title">
+              Stream unlimited movies and TV shows on your phone, tablet,
+              laptop, and TV.
+            </h5>
+          </div>
+          <div class="feature__image__container feature__3__image__container">
+            <img
+              src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
+              alt="Feature image"
+              class="feature__image feature__3__image"
+            />
+            <div
+              class="feature__backgroud__video__container feature__3__backgroud__video__container"
+            >
+              <video
+                autoplay=""
+                loop=""
+                muted=""
+                class="feature__backgroud__video feature__3__backgroud__video"
+              >
+                <source
+                  src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature">
+          <div class="feature__details">
+            <h3 class="feature__title">Create profiles for children.</h3>
+            <h5 class="feature__sub__title">
+              Send children on adventures with their favourite characters in a
+              space made just for them—free with your membership.
+            </h5>
+          </div>
+          <div class="feature__image__container">
+            <img
+              src="https://occ-0-4023-2164.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVxdX2WnFSp49eXb1do0euaj-F8upNImjofE77XStKhf5kUHG94DPlTiGYqPeYNtiox-82NWEK0Ls3CnLe3WWClGdiJP.png?r=5cf"
+              alt="Feature image"
+              class="feature__image"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="FAQ__list__container">
+        <h1 class="FAQ__heading">Frequently Asked Questions</h1>
+        <div class="FAQ__list">
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              What is Netflix?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Netflix is a streaming service that offers a wide variety of
+                award-winning TV shows, movies, anime, documentaries and more –
+                on thousands of internet-connected devices.
+              </p>
+              <p>
+                You can watch as much as you want, whenever you want, without a
+                single ad – all for one low monthly price. There's always
+                something new to discover, and new TV shows and movies are added
+                every week!
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              How much does netflix cost?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Watch Netflix on your smartphone, tablet, Smart TV, laptop, or
+                streaming device, all for one fixed monthly fee. Plans range
+                from ₹ 199 to ₹ 799 a month. No extra costs, no contracts.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              Where can i watch?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Watch anywhere, anytime, on an unlimited number of devices. Sign
+                in with your Netflix account to watch instantly on the web at
+                netflix.com from your personal computer or on any
+                internet-connected device that offers the Netflix app, including
+                smart TVs, smartphones, tablets, streaming media players and
+                game consoles.
+              </p>
+              <p>
+                You can also download your favourite shows with the iOS,
+                Android, or Windows 10 app. Use downloads to watch while you're
+                on the go and without an internet connection. Take Netflix with
+                you anywhere.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              How do I cancel?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Netflix is flexible. There are no annoying contracts and no
+                commitments. You can easily cancel your account online in two
+                clicks. There are no cancellation fees – start or stop your
+                account anytime.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              What can I watch from Netflix?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                Netflix has an extensive library of feature films,
+                documentaries, TV shows, anime, award-winning Netflix originals,
+                and more. Watch as much as you want, anytime you want.
+              </p>
+            </div>
+          </div>
+          <div class="FAQ__accordian">
+            <button class="FAQ__title">
+              Is Netflix good for kids?<i class="fal fa-plus"></i>
+            </button>
+            <div class="FAQ__visible">
+              <p>
+                The Netflix Kids experience is included in your membership to
+                give parents control while kids enjoy family-friendly TV shows
+                and films in their own space.
+              </p>
+              <p>
+                Kids profiles come with PIN-protected parental controls that let
+                you restrict the maturity rating of content kids can watch and
+                block specific titles you don’t want kids to see.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="FAQ__get__started__email">
+          <h3>
+            Ready to watch? Enter your email to create or restart your
+            membership.
+          </h3>
+          <div class="email__form__container">
+            <div class="form__container">
+              <input type="email" class="email__input" placeholder=" " />
+              <label class="email__label">Email Address</label>
+            </div>
+            <button class="primary__button">
+              Get Started <i class="fal fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    // Initialize AOS
-    AOS.init({
-        duration: 1000,
-        once: true,
-    });
+    <footer>
+      <div class="footer__row__1">
+        <h4>Questions? Call 000-800-040-1843</h4>
+      </div>
+      <div class="footer__row__2">
+        <div class="column__1">
+          <p>FAQ</p>
+          <p>Investor Relations</p>
+          <p>Privacy</p>
+          <p>Speed Test</p>
+        </div>
+        <div class="column__2">
+          <p>Help Centre</p>
+          <p>Jobs</p>
+          <p>Cookie Preferences</p>
+          <p>Legal Notices</p>
+        </div>
+        <div class="column__3">
+          <p>Account</p>
+          <p>Ways to Watch</p>
+          <p>Corporate Information</p>
+          <p>Only on Netflix</p>
+        </div>
+        <div class="column__4">
+          <p>Media Centre</p>
+          <p>Terms of Use</p>
+          <p>Contact Us</p>
+        </div>
+      </div>
+      <div class="footer__row__3">
+        <div class="dropdown__container">
+          <i class="fas fa-globe"></i>
+          <select
+            name="languages"
+            id="languagesSelect"
+            class="language__drop__down"
+          >
+            <option value="english" selected>English</option>
+            <option value="hindi">हिन्दी</option>
+          </select>
+        </div>
+      </div>
+      <div class="footer__row__4">
+        <p>Netflix India</p>
+      </div>
+    </footer>
 
-    // Custom Cursor
-    const cursor = document.querySelector('.cursor');
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.pageX + 'px';
-        cursor.style.top = e.pageY + 'px';
-    });
-
-    // Dark Mode Toggle
-    const toggleBtn = document.getElementById('dark-mode-toggle');
-    toggleBtn.addEventListener('click', () => {
-        document.body.setAttribute('data-theme', document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-    });
-
-    // Countdown Timer
-    let timeLeft = 48 * 60 * 60;
-    const updateTimer = () => {
-        const hours = Math.floor(timeLeft / 3600).toString().padStart(2, '0');
-        const minutes = Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0');
-        const seconds = (timeLeft % 60).toString().padStart(2, '0');
-        document.getElementById('countdown').textContent = `${hours}:${minutes}:${seconds}`;
-        timeLeft--;
-        if(timeLeft < 0) clearInterval(timer);
-    };
-    const timer = setInterval(updateTimer, 1000);
-</script>
-
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
