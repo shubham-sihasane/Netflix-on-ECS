@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     SCANNER_HOME = tool 'sonarscanner'
-    APP_NAME = "ElasticApp"
+    APP_NAME = "NetflixApp"
     //DOCKER_REGISTRY = "sihasaneshubham"
     DOCKER_REGISTRY = "680829786414.dkr.ecr.ap-south-1.amazonaws.com"
     DOCKER_REPOSITORY = 'netflix'
